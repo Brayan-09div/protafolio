@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="formulario.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="cont1">
+        <section class="formulario">
+
+            <div>
+                <label for="nombre">Nombres:</label>
+                <input type="text" id="nombre" />
+
+                <label for="nombre">Apellidos:</label>
+                <input type="text" id="apellidos" />
+
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" />
+
+                <label for="telefono">telefono</label>
+                <input type="text" id="telefono" />
+
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" />
+
+
+                <label for="generos">Genero</label>
+
+                <label for="masculino">Masculino</label>
+                <input type="radio" name="genero" id="masculino">
+
+                <label for="femenino">Femenino</label>
+                <input type="radio" name="genero" id="femenino">
+
+                <label for="otro">Otro</label>
+                <input type="radio" name="genero" id="otro">
+
+
+                <label for="documento">Documento</label>
+                <select name="documento" id="documento">
+                    <option value="cedula de ciudadania">cedula de ciudadania</option>
+                    <option value="pasaporte">pasaporte</option>
+                    <option value="precedula">precedula</option>
+                    <option value="cedula de extrangeria"> cedula de extrangeria</option>
+                    <input type="text" id="numerodocumento" placeholder="numero de documento">
+                    <button id="enviar" type="submit" onclick="enviar()">Enviar</button>
+                </select>
+            </div>
+        </section>
+        <div id="tablita">
+            <h1>datos ingresados</h1>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="formulario.js"></script>
+</body>
+
+</html>
