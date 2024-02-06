@@ -72,7 +72,7 @@ function pintar() {
     data.forEach((item, i) => {
         tabla.innerHTML += `
             <ul>
-                <li>  ${item.nombre} - ${item.genero}  - ${item.tipodoc} </li>
+                <li>  ${item.nombre} -- ${item.apellido} -- ${item.correo} -- ${item.telefono} -- ${item.nacimiento} -- ${item.tipodoc} -- ${item.documento}</li>
             </ul>
         `;
     });
