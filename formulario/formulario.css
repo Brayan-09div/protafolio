@@ -102,7 +102,6 @@ body {
 }
 
 #tablita{
-    width: 300px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 15px;
@@ -123,3 +122,6 @@ body {
     }
 }
 
+th , td {
+    border:1px solid;
+}

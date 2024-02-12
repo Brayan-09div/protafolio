@@ -60,21 +60,69 @@ function enviar() {
     document.getElementById('numerodocumento').value = "";
 
 
-pintar();
-    
+    pintar();
+
+
 
 }
 
 function pintar() {
-    let tabla = document.getElementById('tablita');
-    tabla.innerHTML = "";-
+    let tabla = document.getElementById('miTabla').getElementsByTagName('tbody')[0];
+    tabla.innerHTML = "";
 
     data.forEach((item, i) => {
-        tabla.innerHTML += `
-            <ul>
-                <li>  ${item.nombre} -- ${item.apellido} -- ${item.correo} -- ${item.telefono} -- ${item.nacimiento} -- ${item.tipodoc} -- ${item.documento}</li>
-            </ul>
-        `;
+        let fila = tabla.insertRow();
+
+        fila.insertCell(0).textContent = item.nombre;
+        fila.insertCell(1).textContent = item.apellido;
+        fila.insertCell(2).textContent = item.correo;
+        fila.insertCell(3).textContent = item.telefono;
+        fila.insertCell(4).textContent = item.nacimiento;
+        fila.insertCell(5).textContent = item.genero;
+        fila.insertCell(6).textContent = item.tipodoc
+        fila.insertCell(7).textContent = item.documento
+
+
+
+        let eliminar = document.createElement("button");
+        eliminar.textContent = "✖️";
+        eliminar.addEventListener("click", () => {
+            eliminarFila(i);
+        });
+
+        let editar = document.createElement("button");
+        editar.textContent = "✏️";
+        editar.addEventListener("click", () => {
+            editarFila(i);
+        });
+        
+        let celda = fila.insertCell(8);
+        celda.appendChild(eliminar);
+        celda.appendChild(editar); celda.appendChild(editar);
     });
 }
 
+function eliminarFila(index) {
+    data.splice(index, 1);
+    pintar();
+}
+
+function editarFila(index) {
+    let datos = data[index];
+    document.getElementById("nombre").value = datos.nombre;
+    document.getElementById("apellidos").value = datos.apellido;
+    document.getElementById("correo").value = datos.correo;
+    document.getElementById("telefono").value = datos.telefono;
+    document.getElementById("fechaNacimiento").value = datos.nacimiento;
+
+    document.getElementById("masculino").checked = datos.genero === "Masculino";
+    document.getElementById("femenino").checked = datos.genero === "Femenino";
+    document.getElementById("otro").checked = datos.genero === "otro";
+
+    document.getElementById("documento").value = datos.tipodoc;
+    document.getElementById("numerodocumento").value = datos.documento;
+
+    data.splice(index, 1);
+
+    pintar();
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="to_do.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO</title>
+</head>
+<body>
+
+
+    <input type="text" id="tareas" placeholder="Escribe tu tarea">
+   <input type="date" id="fecha">
+
+<label for="aa" class="labe">marque si es importante</label>
+    <input type="checkbox" id="importancia">
+
+    <button id="agregar" onclick="agregar()">Agregar</button>
+
+    <button id="ordenar" onclick="ordenarPorPrioridad()">Ordenar</button>
+
+ 
+
+    <div id="tablaContainer"></div>
+
+
+<script src="to_do.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+body {
+    font-family: 'Arial', sans-serif;
+   background-image: url(./img/stock-vector-vector-watercolor-art-background-old-paper-marble-stone-beige-watercolour-texture-for-cards-2273827283.jpg);
+   background-size: cover;
+   background-position:center ;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+table { 
+    width: 70%;
+    margin-top: 20px;
+    background-color: #fff; 
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f5b042; 
+    color: #fff; 
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; 
+}
+
+tr:hover {
+    background-color: #f0e3c6; 
+}
+
+input, checkbox, button {
+    margin: 5px;
+}
+
+#tablaContainer {
+    margin-top: 20px;
+}
+#tareas{
+    height: 4vh;
+    width: 30%;
+    border-radius: 15px;
+    border:solid 3px #f5b042;
+}
+
+#fecha{
+    height: 4vh;
+    width: 30%;
+    border-radius: 15px;
+    border:solid 3px #f5b042;
+}
+
+#importancia{
+    height: 4vh;
+    width: 30%;
+    border-radius: 15px;
+    border:solid 3px #f5b042;
+}
+
+#agregar{
+    height: 4vh;
+    width: 10%;
+    border-radius: 15px;
+    border:solid 3px #f5b042;
+}
+#ordenar{
+    height: 4vh;
+    width: 10%;
+    border-radius: 15px;
+    border:solid 3px #f5b042;
+}
