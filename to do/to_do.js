@@ -6,8 +6,7 @@ function crearTabla() {
 
     let cabecera = tabla.createTHead();
     let filaCabecera = cabecera.insertRow();
-    let encabezados = ['Tareas', 'Fecha', 'Prioridad'];
-
+    let encabezados = ['Tareas', 'Fecha', 'Prioridad', 'Eliminar']; 
     encabezados.forEach(function (encabezado) {
         let th = document.createElement('th');
         th.textContent = encabezado;
@@ -48,9 +47,22 @@ function agregar() {
     prioridadSpan.setAttribute('data-prioridad', checkbox ? 'Alta' : 'Baja');
     celdaCheckbox.appendChild(prioridadSpan);
 
+    let celdaEliminar = fila.insertCell(3); 
+    let btnEliminar = document.createElement('button');
+    btnEliminar.textContent = '✖️';
+    btnEliminar.addEventListener('click', function () {
+        eliminarTarea(fila);
+    });
+    celdaEliminar.appendChild(btnEliminar);
+
     document.getElementById('tareas').value = "";
     document.getElementById('fecha').value = "";
     document.getElementById('importancia').checked = false;
+}
+
+function eliminarTarea(fila) {
+    let tabla = document.getElementById('tablaDatos');
+    tabla.deleteRow(fila.rowIndex);
 }
 
 function ordenarPorPrioridad() {
@@ -62,7 +74,7 @@ function ordenarPorPrioridad() {
     }
 
     let filas = Array.from(tabla.rows);
-    filas.shift(); 
+    filas.shift();
 
     filas.sort(function(a, b) {
         let prioridadA = a.cells[2].getElementsByTagName('span')[0].getAttribute('data-prioridad');

@@ -9,6 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
     margin: 0;
     background-image: url('./gif.gif');
     background-size: cover;
@@ -28,12 +29,13 @@ body {
 
 
 .formulario {
+    display: flex;
     width: 300px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff85;
+    background-color: #ffffff96;
     animation: slideIn 1s ease-in-out;
 }
 
@@ -106,8 +108,10 @@ body {
     border: 1px solid #ccc;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff85;
+    background-color: #ffffff96;
     animation: slideIn 1s ease-in-out;
+    overflow-y:scroll;
+    height: 700px;
 }
 
 
@@ -124,4 +128,35 @@ body {
 
 th , td {
     border:1px solid;
+}
+@media (max-width: 1100px) {
+    .cont1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        background-image: url('./gif.gif');
+        background-size: cover;
+        background-position: center;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .formulario {
+        flex-direction: column; 
+    }
+
+    .formulario input,
+    .formulario select,
+    .formulario input[type="date"],
+    .formulario input[type="text"] {
+        width: 100%; 
+        margin-right: 0; 
+    }
+
+    #tablita {
+        height: 100vh; 
+    }
+    
 }

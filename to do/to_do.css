@@ -12,11 +12,12 @@ body {
 }
 
 table { 
-    width: 70%;
+    width: 100%;
     margin-top: 20px;
     background-color: #fff; 
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 th, td {
@@ -77,4 +78,9 @@ input, checkbox, button {
     width: 10%;
     border-radius: 15px;
     border:solid 3px #f5b042;
+}
+#tablaContainer{
+    width: 40%;
+height: 400px;
+overflow-y: scroll;
 }

@@ -1,7 +1,10 @@
 
 let data = [];
+let active = true;
+let indice = null;
 
 function enviar() {
+    if(active == true) {
     let nombre = document.getElementById('nombre').value
     console.log(nombre)
     let apellido = document.getElementById('apellidos').value
@@ -47,7 +50,22 @@ function enviar() {
     data.push(datos)
     console.log(data);
 
+    pintar();
+    limpiar();
 
+    }else{
+     
+        data[indice].nombre = document.getElementById("nombre").value;
+        data[indice].apellido = document.getElementById("apellidos").value;
+        pintar();
+        limpiar();
+        active = true;
+    }
+
+}
+
+
+function limpiar(){
     document.getElementById('nombre').value = "";
     document.getElementById('apellidos').value = "";
     document.getElementById('correo').value = "";
@@ -59,18 +77,15 @@ function enviar() {
     document.getElementById('documento').value = "cedula de ciudadania";
     document.getElementById('numerodocumento').value = "";
 
-
-    pintar();
-
-
-
 }
+
+
 
 function pintar() {
     let tabla = document.getElementById('miTabla').getElementsByTagName('tbody')[0];
     tabla.innerHTML = "";
 
-    data.forEach((item, i) => {
+    data.forEach((item, index) => {
         let fila = tabla.insertRow();
 
         fila.insertCell(0).textContent = item.nombre;
@@ -87,13 +102,13 @@ function pintar() {
         let eliminar = document.createElement("button");
         eliminar.textContent = "✖️";
         eliminar.addEventListener("click", () => {
-            eliminarFila(i);
+            eliminarFila(index);
         });
 
         let editar = document.createElement("button");
         editar.textContent = "✏️";
         editar.addEventListener("click", () => {
-            editarFila(i);
+            editarFila(index);
         });
         
         let celda = fila.insertCell(8);
@@ -107,22 +122,13 @@ function eliminarFila(index) {
     pintar();
 }
 
+
 function editarFila(index) {
-    let datos = data[index];
-    document.getElementById("nombre").value = datos.nombre;
-    document.getElementById("apellidos").value = datos.apellido;
-    document.getElementById("correo").value = datos.correo;
-    document.getElementById("telefono").value = datos.telefono;
-    document.getElementById("fechaNacimiento").value = datos.nacimiento;
+    console.log(data);
+    active = false;
+    let elemento = data[index];
+    document.getElementById("nombre").value = elemento.nombre;
+    document.getElementById("apellidos").value = elemento.apellido;
 
-    document.getElementById("masculino").checked = datos.genero === "Masculino";
-    document.getElementById("femenino").checked = datos.genero === "Femenino";
-    document.getElementById("otro").checked = datos.genero === "otro";
-
-    document.getElementById("documento").value = datos.tipodoc;
-    document.getElementById("numerodocumento").value = datos.documento;
-
-    data.splice(index, 1);
-
-    pintar();
+    indice = index;
 }
