@@ -1,0 +1,177 @@
+
+
+
+
+
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #000; 
+  }
+
+  
+  .carousel-control-prev, .carousel-control-next {
+    color: #000; 
+     }
+  .carousel-control-prev:hover, .carousel-control-next:hover {
+    color: #fff; 
+  }
+
+
+
+.pricipal-conte{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#product-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+}
+
+.product-card {
+    border: 2px solid rgb(255, 195, 85);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    text-align: left;
+    max-width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease, border-radius 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    border: 2px solid rgb(255, 120, 0);
+    border-radius: 15px;
+    background-color: rgba(255, 195, 85, 0.1);
+    transform: rotate(5deg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card h2, .product-card p {
+    transition: color 0.3s ease;
+}
+
+.product-card:hover h2, .product-card:hover p {
+    color: rgb(255, 120, 0);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    #product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 500px) {
+    #product-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+.cont1 {
+    text-align: center;
+    height: 50vh;
+    background-color: white;
+    border: 2px solid rgb(255, 195, 85);
+    border-radius: 5px;
+    display: none;
+    position: fixed;
+    top: 10%;
+    right: 0;
+    z-index: 1000 !important;
+    overflow-y: scroll;
+    animation: fadeIn 1s ease; 
+    transition: box-shadow 0.3s ease, height 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.cont1:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.cont1.closed {
+    height: 0;
+    animation: fadeOut 0.5s ease;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+
+
+.th{
+    color: rgb(11, 11, 11);
+    border: 2px solid  rgb(255, 195, 85);
+    text-align: center;
+  
+}
+
+
+.nombre-celda {
+    padding: 20px;
+    font-weight: bold;
+    border: 2px solid  rgb(255, 195, 85);
+
+}
+
+.cantidad-celda {
+    text-align: center;
+    border: 2px solid  rgb(255, 195, 85);
+}
+
+
+.valor-celda {
+    padding: 20px;
+    text-align: right;
+    border: 2px solid  rgb(255, 195, 85);
+}
+
+.imagen-celda{
+    text-align: center;
+    border: 2px solid  rgb(255, 195, 85);
+}
+.tol{
+    width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+
+.nombre-celda, .cantidad-celda, .valor-celda, .imagen-celda {
+    transition: background-color 0.3s ease;
+}
+
+.nombre-celda:hover, .cantidad-celda:hover, .valor-celda:hover, .imagen-celda:hover {
+    background-color: rgba(255, 195, 85, 0.1);
+}
+
+.Eliminar-celda{
+    padding: 20px;
+    text-align: center;
+    border: 2px solid  rgb(255, 195, 85);
+}

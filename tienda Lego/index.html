@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <link rel="icon" href="./img/Lego.jpg" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lego</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button id="burgerButton" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="ajustarPosicionCont1()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <img src="./img/Lego.jpg" style="height: 60px; width: 150px" />
+        </ul>
+
+        <form class="d-flex" role="search">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary   btn-warning"  onclick="visi()">
+                <span class="material-icons">shopping_cart</span>
+                <span id="contadorCarrito">0</span>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="./img/Banner Descuento Tecnologia Moderno  Degradado Azul (1).png" class="d-block"
+          style="height: 80vh; width: 100vw" />
+      </div>
+
+      <div class="carousel-item">
+        <img src="./img/banner-marvel.jpg" class="d-block" style="height: 80vh; width: 100vw" />
+      </div>
+
+      <div class="carousel-item">
+        <img src="./img/lego-carros.jpg" class="d-block" style="height: 80vh; width: 100vw" />
+      </div>
+
+      <div class="carousel-item">
+        <img src="./img/banner-dis.jpg" class="d-block" style="height: 80vh; width: 100vw" />
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true" data-bs-target="#carouselExampleDark"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+      <div class="pricipal-conte">
+
+      <div id="product-container">
+      </div>
+      
+      </div>
+      
+    <div class="cont1">
+      <h4>Tu Carrito</h4>
+      <table id="miTabla">
+        <thead>
+          <tr>
+            <th class="th">Producto</th>
+            <th class="th">Nombre</th>
+            <th class="th">Cantidad</th>
+            <th class="th">Valor</th>
+            <th class="th">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="tol">
+        <h6>Total:</h6>
+        <p id="total">0</p>
+      </div>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Comprar
+      </button>
+    </div>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Gracias Por Su Compra 👍</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+      
+<script src="funcion.js"></script>
+
+</body>
+</html>
