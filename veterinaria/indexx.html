@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./img/logo.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Consultas Veterinarias</title>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+
+    <div class="conprincipal">
+      <div class="header">
+        <h1>Administración de Consultas</h1>
+      </div>
+      <div class="cont">
+        <button id="AgregarConsulta" onclick="abrirModal()">
+          Agregar Consulta
+        </button>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+          "
+        >
+          <label for="Ordenar">Ordenar Por</label>
+          <div class="ordenar">
+            <input type="radio" name="Ordenar" id="todas" value="todas" onclick="mostrarTodas()" checked>
+            <label for="todas">Todas</label>
+        
+            <input type="radio" name="Ordenar" id="Abiertas" value="abierto" onclick="filtrarPorAbiertas()">
+            <label for="Abiertas">Abiertas</label>
+        
+            <input type="radio" name="Ordenar" id="Finalizadas" value="finalizado" onclick="filtrarPorFinalizadas()">
+            <label for="Finalizadas">Finalizadas</label>
+        
+            <input type="radio" name="Ordenar" id="Cancelada" value="anulado" onclick="filtrarPorAnuladas()">
+            <label for="Cancelada">Anuladas</label>
+        </div>
+        </div>
+      </div>
+    </div>
+<div class="principal">
+    <div id="cards"class="card-container"> 
+    </div>
+</div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModalBtn" onclick="cerrarModal()"
+          >&times;</span
+        >
+        <div class="datos">
+          <label for="">Nombre De Mascota</label>
+          <input type="text" id="nombreMascota" />
+          <label for="">Nombre Dueño</label>
+          <input type="text" id="dueño" />
+          <label for="">Telefono</label>
+          <input type="text" id="telefono" />
+          <label for="">Tipo De Mascota</label>
+          <select name="tipoMascota" id="tipoMascota">
+            <option value="Perro">Perro</option>
+            <option value="Gato">Gato</option>
+            <option value="Pajaro">Pajaro</option>
+            <option value="Conejo">Conejo</option>
+            <option value="Pez">Pez</option>
+            <option value="Cerdo">Cerdo</option>
+            <option value="Otro">Otro</option>
+          </select>
+          <label for="">Fecha</label>
+          <input type="date" id="fecha" />
+          <label for="">Hora</label>
+          <input type="time" id="hora" />
+          <label for="">Descripcion De La Consulta</label>
+          <input type="text" id="descripcion" />
+          <label for="">Estado De La Consulta</label>
+          <select name="estado" id="estado">
+            <option value="abierto">abierto</option>
+            <option value="finalizadas">finalizadas</option>
+            <option value="anulada">anulada</option>
+          </select>
+          <button onclick="aceptarModal()">Aceptar</button>
+        </div>
+      </div>
+    </div>
+    
+    <script src="app.js"></script>
+  </body>
+</html>
