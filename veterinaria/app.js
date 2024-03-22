@@ -413,7 +413,6 @@ document.addEventListener("DOMContentLoaded", function () {
     fechaInput.setAttribute("min", minDate);
   }
 });
-
 function validarCamposYFechaTiempo() {
   const nombreMascota = document.getElementById("nombreMascota").value;
   const dueño = document.getElementById("dueño").value;
@@ -455,28 +454,23 @@ function validarCamposYFechaTiempo() {
     alert("Ingresa la hora.");
     return false;
   }
-  const horaLimiteInicio = new Date();
-  horaLimiteInicio.setHours(7, 0, 0);
-  const horaLimiteFin = new Date();
-  horaLimiteFin.setHours(23, 0, 0);
+
   const fechaSeleccionada = new Date(fecha);
-  const horaSeleccionada = new Date(
-    fechaSeleccionada.getFullYear(),
-    fechaSeleccionada.getMonth(),
-    fechaSeleccionada.getDate(),
-    parseInt(tiempo.split(":")[0]),
-    parseInt(tiempo.split(":")[1])
-  );
-  if (
-    fechaSeleccionada <= new Date() ||
-    (fechaSeleccionada.getTime() === new Date().getTime() &&
-      horaSeleccionada < horaLimiteInicio) ||
-    horaSeleccionada > horaLimiteFin
-  ) {
-    alert(
-      "La fecha y el tiempo deben ser mayores a la fecha y hora actuales, y el tiempo debe estar en el rango de 07:00 a 23:00."
-    );
+  const horaSeleccionada = parseInt(tiempo.split(":")[0]);
+
+  // Verificar si la fecha seleccionada es mayor que la fecha actual
+  const hoy = new Date();
+  hoy.setHours(0, 0, 0, 0); // Ajustamos la hora a medianoche para comparar solo las fechas
+  if (fechaSeleccionada <= hoy) {
+    alert("La fecha de la cita debe ser posterior a la fecha actual.");
     return false;
   }
+
+  // Verificar si la hora seleccionada está dentro del rango de 6 am a 6 pm
+  if (horaSeleccionada < 6 || horaSeleccionada >= 18) {
+    alert("La hora de la cita debe estar entre las 6:00 am y las 6:00 pm.");
+    return false;
+  }
+
   return true;
 }
